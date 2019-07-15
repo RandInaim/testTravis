@@ -9,7 +9,7 @@
 
 const combinedLength = (array1, array2, cb) => {
 	// CODE HERE
-	if (!Array.isArray(array1) || !Array.isArray(array2)) {
+	if (!Array.isArray(array1)) {
 		cb(
 			new TypeError(
 				`Invalid arguments array1 is array : ${Array.isArray(array1)} , array2 is array : ${Array.isArray(
