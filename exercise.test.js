@@ -94,46 +94,4 @@ tape('Exercise :: Approach 1 :: Error-First Callbacks', (test) => {
 			t.ok(err instanceof TypeError, "Calling sumArray with ([1, '', true]) should return a new TypeError");
 		});
 	});
-
-	test.test('combineAndPrint :: valid arguments', (t) => {
-		t.plan(8);
-		combineAndPrint([], [], (err, res) => {
-			t.notOk(err, 'Should be no error, so first argument passed to callback should be falsy');
-			t.equal(res, 'Combined length: 0; Combined sum of elements: 0');
-		});
-		combineAndPrint([ 1 ], [], (err, res) => {
-			t.notOk(err, 'Should be no error, so first argument passed to callback should be falsy');
-			t.equal(res, 'Combined length: 1; Combined sum of elements: 1');
-		});
-		combineAndPrint([], [ 1 ], (err, res) => {
-			t.notOk(err, 'Should be no error, so first argument passed to callback should be falsy');
-			t.equal(res, 'Combined length: 1; Combined sum of elements: 1');
-		});
-		combineAndPrint([ 1, 2, 3 ], [ 1, 2, 3, 4 ], (err, res) => {
-			t.notOk(err, 'Should be no error, so first argument passed to callback should be falsy');
-			t.equal(res, 'Combined length: 7; Combined sum of elements: 16');
-		});
-	});
-
-	test.test('combineAndPrint :: invalid arguments', (t) => {
-		t.plan(6);
-		combineAndPrint(undefined, undefined, (err, res) => {
-			t.equal(err, 'Invalid arguments: both arguments must be arrays');
-		});
-		combineAndPrint(1, undefined, (err, res) => {
-			t.equal(err, 'Invalid arguments: both arguments must be arrays');
-		});
-		combineAndPrint(1, {}, (err, res) => {
-			t.equal(err, 'Invalid arguments: both arguments must be arrays');
-		});
-		combineAndPrint({}, [], (err, res) => {
-			t.equal(err, 'Invalid arguments: both arguments must be arrays');
-		});
-		combineAndPrint([], {}, (err, res) => {
-			t.equal(err, 'Invalid arguments: both arguments must be arrays');
-		});
-		combineAndPrint('', [], (err, res) => {
-			t.equal(err, 'Invalid arguments: both arguments must be arrays');
-		});
-	});
 });
