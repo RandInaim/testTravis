@@ -6,9 +6,7 @@
 	"scripts": {
 		"opt-test": "tape optional_extra/tests/src/*.test.js | tap-spec",
 		"opt-acceptance": "tape optional_extra/tests/.acceptance.test.js | tap-spec",
-		"test": "tape exercises/approach-1/exercise.test.js | tap-spec",
-		"ex-2": "tape exercises/approach-2/exercise.test.js | tap-spec",
-		"ex-3": "tape exercises/approach-3/exercise.test.js | tap-spec"
+		"test": "tape ./exercise.test.js | tap-spec"
 	},
 	"contributors": [ "njsfield", "eliascodes" ],
 	"license": "MIT",
